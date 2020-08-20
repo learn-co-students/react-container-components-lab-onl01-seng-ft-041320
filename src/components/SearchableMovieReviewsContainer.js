@@ -8,8 +8,8 @@ const URL = 'To query the search API: https://api.nytimes.com/svc/movies/v2/revi
             + `api-key=${NYT_API_KEY}`;
 
   export default class SearchableMovieReviewsContainer extends Component {
-    constructor(props) {
-      super(props)
+    constructor() {
+      super()
 
       this.state = {
         reviews: [],
