@@ -14,7 +14,7 @@ state = {
 }
 
 searchMovies = (query = "titanic") => {
-    fetch({URL}+{query}+{END})
+    fetch(URL+query+END)
     .then((response) => response.json())
     .then(({data}) => {console.log(data)});
 }

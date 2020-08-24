@@ -8,7 +8,7 @@ const END =  `&api-key=${NYT_API_KEY}`;
 
 // Code LatestMovieReviewsContainer Here
 class LatestMovieReviewsContainer extends Component {
-    
+
     state = {
         reviews: []
     }
@@ -24,13 +24,13 @@ class LatestMovieReviewsContainer extends Component {
 
     componentDidMount(){
 
-        fetch({URL}+{END})
+        fetch(URL+END)
         .then((response) => response.json())
-        .then((data) => {
-            this.setState(
-            { 
-                reviews: data.map(review => ({title: review.results.display_title}))})
-        });
+        .then(({data}) => {
+            this.setState({reviews: data.map(review => ({title: review.results.display_title})) 
+            })
+        }
+    );
     }
 }
 
