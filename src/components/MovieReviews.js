@@ -6,14 +6,14 @@ const MovieReviews = props => {
 console.log("props", props)
 
 let allReviews = [];
-if (props.map && props){
-   return allReviews = props.reviews.map(review => review)
+if (props !== ''){
+    allReviews += props.reviews.map(review => <Review review={review} />)
 }
-console.log(allReviews)
+console.log("review", allReviews)
     return (
         <div className="review-list">
             <ul>
-            <Review review={allReviews} />
+            {allReviews}
             </ul>     
         </div>
     )
@@ -25,7 +25,7 @@ const Review = (review) => {
     return ( 
     <div>
         <h1>These are the reviews</h1>
-        {/* <li key={review.link.url}><a href={review.link.url}>{review.link.type} {review.link.suggested_link_text}</a></li> */}
+        <li key={review.link.url}><a href={review.link.url}>{review.link.type} {review.link.suggested_link_text}</a></li>
     </div>
     )
 }

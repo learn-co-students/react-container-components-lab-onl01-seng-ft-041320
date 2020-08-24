@@ -19,16 +19,9 @@ class LatestMovieReviewsContainer extends Component {
         .then((data) => this.setState({ reviews: data.results }));
     }
 
-    renderMovies = () => {
-        
-    }
-
-    render(){
+    render() {
         return(
             <div className="latest-movie-reviews">
-                <ul>
-        
-                </ul>
                 <MovieReviews reviews={this.state.reviews}/>
             </div>
         )
@@ -36,12 +29,5 @@ class LatestMovieReviewsContainer extends Component {
     }
 }
 
-// componentDidMount(){
-//     let results = "";
-//     fetch({URL}+{END})
-//     .then((response) => response.json())
-//     .then((data) => this.setState({ results: data.results }));
-//   }
-//display_title, link, byLine, headline, link, summary_short, opening_data, multimedia, mpaa_rating
 
 export default LatestMovieReviewsContainer;
