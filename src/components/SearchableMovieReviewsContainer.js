@@ -21,8 +21,8 @@ searchMovies = (query = "titanic") => {
 
 handleSubmit = event =>{
     event.preventDefault();
-    event.presist()
-    console.log(event)
+    // event.persist()
+    // console.log(this.state.searchTerm)
     let query = this.state.searchTerm
     this.searchMovies(query)
 }
@@ -31,7 +31,7 @@ handleSubmit = event =>{
         return(
             <div className="searchable-movie-reviews">
             <form onSubmit={this.handleSubmit}>
-               <input type="text" value={this.state.searchTerm} onChange={event => this.setState({query: event.target.value})} />
+               <input type="text" onChange={event => this.setState({searchTerm: event.target.value})} />
             </form>
             </div>
         )

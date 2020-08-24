@@ -1,12 +1,18 @@
 // Code MovieReviews Here
 import React from 'react';
 
-const MovieReviews = (props) => {
-    
+const MovieReviews = props => {
+    // console.log(this.reviews)
+
     return (
-        <div className="review-list">     
+        <div className="review-list">
+            <ul>
+            {props.map(review => <li key={review.link.url}><a href={review.link.url}>{review.link.type} {review.link.suggested_link_text}</a></li>)}
+            </ul>     
         </div>
     )
 }
+// {props.reviews.map((review) => console.log(review))}
+// 
 
 export default MovieReviews;
