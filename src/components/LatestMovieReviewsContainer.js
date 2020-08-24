@@ -22,15 +22,13 @@ class LatestMovieReviewsContainer extends Component {
     }
 
     componentDidMount(){
-        let results = "";
+
         fetch({URL}+{END})
         .then((response) => response.json())
-        // .then((data) => console.log(data.results))
         .then((data) => {
             this.setState(
-             results = data.results,
             { 
-                reviews: results.map(result => (console.log(result)))})
+                reviews: data.map(review => ({title: review.results.display_title}))})
         });
     }
 }

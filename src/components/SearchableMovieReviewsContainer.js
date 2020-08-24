@@ -14,7 +14,6 @@ state = {
 }
 
 searchMovies = (query = "titanic") => {
-    debugger;
     fetch({URL}+{query}+{END})
     .then((response) => response.json())
     .then(({data}) => {console.log(data)});
