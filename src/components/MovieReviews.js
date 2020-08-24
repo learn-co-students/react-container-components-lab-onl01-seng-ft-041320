@@ -3,17 +3,17 @@ import React from 'react';
 
 const MovieReviews = props => {
     
-console.log("props", props)
+// console.log("props", props)
 
-let allReviews = [];
-if (props !== ''){
-    allReviews += props.reviews.map(review => <Review review={review} />)
-}
-console.log("review", allReviews)
+// let allReviews = [];
+// if (props.reviews !== []){
+//     allReviews = props.reviews.map(review => <Review key={review.id} review={review} />)
+// }
+// console.log("review", allReviews)
     return (
         <div className="review-list">
             <ul>
-            {allReviews}
+            {props.reviews.map(Review)}
             </ul>     
         </div>
     )
@@ -21,11 +21,11 @@ console.log("review", allReviews)
 }
 
 const Review = (review) => {
-    console.log("review", review)
+    // console.log("review", review.link)
     return ( 
-    <div>
-        <h1>These are the reviews</h1>
-        <li key={review.link.url}><a href={review.link.url}>{review.link.type} {review.link.suggested_link_text}</a></li>
+    <div className="review">
+        <h1>This is the review</h1>
+        <li key={review.id}><a href={review.link.url}>{review.link.type} {review.link.suggested_link_text}</a></li>
     </div>
     )
 }
