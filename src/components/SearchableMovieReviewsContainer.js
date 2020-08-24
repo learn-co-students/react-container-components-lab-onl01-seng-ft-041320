@@ -16,7 +16,7 @@ state = {
 searchMovies = (query = "titanic") => {
     fetch(URL+query+END)
     .then((response) => response.json())
-    .then(({data}) => {console.log(data)});
+    .then((data) => this.setState({ reviews: data.results }));
 }
 
 handleSubmit = event =>{
