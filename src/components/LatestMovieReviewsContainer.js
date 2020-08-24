@@ -27,9 +27,9 @@ class LatestMovieReviewsContainer extends Component {
         return(
             <div className="latest-movie-reviews">
                 <ul>
-        {this.state.reviews.map(review => <li key={review.link.url}><a href={review.link.url}>{review.link.type} {review.link.suggested_link_text}</a></li>)}
+        
                 </ul>
-                <MovieReviews props={this.state.reviews}/>
+                <MovieReviews reviews={this.state.reviews}/>
             </div>
         )
         
